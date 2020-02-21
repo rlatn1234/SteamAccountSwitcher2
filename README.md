@@ -1,5 +1,5 @@
 # SteamAccountSwitcher2
-Completely rewritten account switcher for Steam.
+스팀 계정 변경기
 
 This is work in progress!
 There are major bugs and missing features in this current version!
