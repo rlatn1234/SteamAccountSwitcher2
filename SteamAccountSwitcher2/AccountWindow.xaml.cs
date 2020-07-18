@@ -112,5 +112,10 @@ namespace SteamAccountSwitcher2
             newAcc = null;
             Close();
         }
+
+        private void comboBoxType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

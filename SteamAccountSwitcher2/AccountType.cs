@@ -8,6 +8,6 @@ namespace SteamAccountSwitcher2
 {
     public enum AccountType
     {
-        Main, Smurf, Friend
+        본계정, 부계정, 친구
     }
 }

@@ -59,6 +59,7 @@ namespace SteamAccountSwitcher2
 
         }
 
+
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Properties.Settings.Default.safemode = safeModeToggle.IsChecked.Value;

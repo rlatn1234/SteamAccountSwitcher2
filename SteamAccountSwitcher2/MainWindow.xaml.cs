@@ -249,5 +249,10 @@ namespace SteamAccountSwitcher2
         {
             listContextMenuEdit_Click(sender, e);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

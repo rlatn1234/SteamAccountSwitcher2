@@ -23,7 +23,7 @@ namespace SteamAccountSwitcher2
             this.name = username;
             this.username = username;
             this.password = password;
-            this.type = AccountType.Main;
+            this.type = AccountType.본계정;
         }
 
         public string Name
@@ -54,11 +54,11 @@ namespace SteamAccountSwitcher2
         {
             get
             {
-                if (this.type == AccountType.Main)
+                if (this.type == AccountType.본계정)
                 {
                     return "steam-ico-main.png";
                 }
-                if (this.type == AccountType.Smurf)
+                if (this.type == AccountType.부계정)
                 {
                     return "steam-ico-smurf.png";
                 }

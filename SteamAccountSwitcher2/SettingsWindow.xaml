@@ -8,61 +8,73 @@
         Title="Settings" Height="314" Width="400" Icon="images/gear.png" MinWidth="400" MinHeight="300" Closing="Window_Closing" WindowStartupLocation="CenterOwner">
     <Grid>
         <TabControl Margin="5,5,5,5">
-            <TabItem Header="General">
+            <TabItem Header="일반">
                 <Grid>
                     <GroupBox Margin="5,5,5,0" FontSize="11" FontWeight="Bold"
                     Height="82" VerticalAlignment="Top">
-                        <GroupBox.Header>Steam Installation Directory</GroupBox.Header>
+                        <GroupBox.Header>스팀 설치 경로</GroupBox.Header>
                         <Grid Margin="5">
-                            <TextBlock FontSize="12" FontWeight="Regular" TextWrapping="WrapWithOverflow"><Run Text="You can change the used Steam installation at any time."/></TextBlock>
-                            <TextBox x:Name="textSteamInstallDir" Height="23" TextWrapping="Wrap" Text="..." VerticalAlignment="Bottom" Margin="0,0,70,0" IsEnabled="False"/>
-                            <Button x:Name="buttonBrowseSteamInstallDir" Content="Browse" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="70" Height="23" Click="buttonBrowseSteamInstallDir_Click"/>
+                            <TextBlock FontSize="12" FontWeight="Regular" TextWrapping="WrapWithOverflow"><Run Text="스팀 설치경로를 변경할수 있습니다."/></TextBlock>
+                            <TextBox x:Name="textSteamInstallDir" Height="23" TextWrapping="Wrap" Text="..." VerticalAlignment="Bottom" Margin="0,0,48,0" IsEnabled="False"/>
+                            <Button x:Name="buttonBrowseSteamInstallDir" Content="열기" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="43" Height="23" Click="buttonBrowseSteamInstallDir_Click"/>
                         </Grid>
                     </GroupBox>
                     <GroupBox Margin="5,92,5,0" FontSize="11" FontWeight="Bold"
                     Height="102" VerticalAlignment="Top">
-                        <GroupBox.Header>AutoStart</GroupBox.Header>
+                        <GroupBox.Header>자동시작</GroupBox.Header>
                         <Grid Margin="5">
-                            <TextBlock FontSize="12" FontWeight="Regular" TextWrapping="WrapWithOverflow"><Run Text="Set AutoStart "/></TextBlock>
+                            <TextBlock FontSize="12" FontWeight="Regular" TextWrapping="WrapWithOverflow" Margin="0,0,94,54"><Run Text="컴퓨터 시작시 같이 시작 (준비중)"/></TextBlock>
+                            <CheckBox Margin="230,0,94,54" RenderTransformOrigin="0.021,0.478"></CheckBox>
                         </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="Security">
+            <TabItem Header="보안">
                 <Grid Margin="0,0,0,-23">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="17*"/>
-                        <ColumnDefinition Width="171*"/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="18*"/>
                     </Grid.ColumnDefinitions>
                     <GroupBox Margin="5,5,5,0" FontSize="11" FontWeight="Bold"
-                    Height="119" VerticalAlignment="Top" Grid.ColumnSpan="2">
-                        <GroupBox.Header>Encryption Method</GroupBox.Header>
+                    Height="119" VerticalAlignment="Top" Grid.ColumnSpan="3">
+                        <GroupBox.Header>암호화 방법</GroupBox.Header>
                         <Grid Margin="5">
                             <StackPanel>
-                                <RadioButton x:Name="radioButtonBasicEnc" Content="Basic" Margin="5,5,5,0"/>
-                                <Label FontSize="10" Margin="0" FontWeight="Normal">Encrypts Accounts with 256-bit AES key</Label>
-                                <RadioButton x:Name="radioButtonPasswordEnc" Content="Master Password" Margin="5,5,5,0" ToolTip="Forgetting your master password will lead to the loss of all account access through SteamAccountSwitcher!"/>
-                                <Label FontSize="10" Margin="0" FontWeight="Normal">Encrypts Accounts with your own password</Label>
+                                <RadioButton x:Name="radioButtonBasicEnc" Content="기본" Margin="5,5,5,0"/>
+                                <Label FontSize="10" Margin="0" FontWeight="Normal">비밀번호를 256-비트 AES 키 방식으로 암호화합니다.</Label>
+                                <RadioButton x:Name="radioButtonPasswordEnc" Content="비밀번호" Margin="5,5,5,0" ToolTip="Forgetting your master password will lead to the loss of all account access through SteamAccountSwitcher!"/>
+                                <Label FontSize="10" Margin="0" FontWeight="Normal">설정한 비밀번호로 스팀 비밀번호를 암호화합니다.</Label>
                             </StackPanel>
 
-                            <Button Content="Save and reload" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="105" Height="23"/>
+                            <Button Content="저장후 재시작" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="83" Height="23" Margin="0,0,0,3"/>
                         </Grid>
                     </GroupBox>
                     <GroupBox Margin="5,129,5,0" FontSize="11" FontWeight="Bold"
-                    Height="94" VerticalAlignment="Top" Grid.ColumnSpan="2">
-                        <GroupBox.Header>Login Method</GroupBox.Header>
+                    Height="94" VerticalAlignment="Top" Grid.ColumnSpan="3">
+                        <GroupBox.Header>로그인 방법</GroupBox.Header>
                         <Grid Margin="5">
                             <StackPanel>
-                                <CheckBox x:Name="safeModeToggle" Content="Use SafeMode" FontWeight="Medium" />
-                                <TextBlock FontSize="10" FontWeight="Normal" TextWrapping="Wrap" Margin="5">SafeMode uses different login method that doesn't expose your password in the task manager. It is slower and you cannot move your mouse during login!</TextBlock>
+                                <CheckBox x:Name="safeModeToggle" Content="안전모드 사용" FontWeight="Medium" />
+                                <TextBlock FontSize="10" FontWeight="Normal" TextWrapping="Wrap" Margin="5">안전모드의 로그인 방식은 조금 더 안전하지만 로그인 하는동안 마우스를 움직일수 없습니다.</TextBlock>
                             </StackPanel>
                         </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>
-            <TabItem Header="Details" />
-
-
+            <TabItem Header="자세히">
+                <Grid>
+                    <GroupBox Margin="5,0" FontSize="11" FontWeight="Bold"
+                    Height="235" VerticalAlignment="Top">
+                        <GroupBox.Header>정보</GroupBox.Header>
+                        <Grid Margin="5">
+                            <TextBlock FontSize="12" FontWeight="Regular" TextWrapping="WrapWithOverflow">
+                                 <Hyperlink >개발자 Github</Hyperlink>
+                            </TextBlock>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>
